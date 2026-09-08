@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LoginForm from "./components/LoginForm";
+import ScoreForm from "./components/ScoreForm";
 
 function App() {
   const [token, setToken] = useState<string | null>(null);
@@ -27,7 +28,7 @@ function App() {
   };
 
   if (token) {
-    return <div>Logged in! Token stored.</div>;
+    return <ScoreForm onSearch={(rut) => console.log(rut)} />;
   }
 
   return (
