@@ -5,61 +5,225 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: #f5f5f5;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #0f172a;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  color: #f8fafc;
 }
 
-form {
-  background: white;
-  padding: 32px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-width: 300px;
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.brand {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 8px;
 }
 
 h2 {
-  font-size: 24px;
-  color: #333;
+  font-size: 26px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
 }
 
 input {
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
+  padding: 12px 16px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #f8fafc;
   outline: none;
+  transition: border-color 0.2s;
+}
+
+input::placeholder {
+  color: #475569;
 }
 
 input:focus {
-  border-color: #4f46e5;
+  border-color: #6366f1;
 }
 
 button {
-  padding: 10px;
-  background: #4f46e5;
+  width: 100%;
+  padding: 13px;
+  background: #6366f1;
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 8px;
+  transition:
+    background 0.2s,
+    transform 0.1s;
 }
 
 button:hover {
-  background: #4338ca;
+  background: #4f46e5;
 }
 
-.result {
-  background: white;
-  padding: 24px;
+button:active {
+  transform: scale(0.98);
+}
+
+.error {
+  color: #f87171;
+  font-size: 13px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 16px;
-  min-width: 300px;
+}
+
+.score-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.score-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+  background: #0f172a;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+.score-number {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-number.high {
+  color: #4ade80;
+}
+.score-number.mid {
+  color: #facc15;
+}
+.score-number.low {
+  color: #f87171;
+}
+
+.score-bar-track {
+  width: 100%;
+  height: 8px;
+  background: #334155;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.score-bar-fill.high {
+  background: #4ade80;
+}
+.score-bar-fill.mid {
+  background: #facc15;
+}
+.score-bar-fill.low {
+  background: #f87171;
+}
+
+.score-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #0f172a;
+  border-radius: 10px;
+  border: 1px solid #334155;
+}
+
+.detail-label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.divider {
+  height: 1px;
+  background: #334155;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #64748b;
+  font-size: 13px;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.logout-btn:hover {
+  background: #334155;
+  color: #f8fafc;
 }

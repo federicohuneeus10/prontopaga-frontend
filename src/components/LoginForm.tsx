@@ -14,21 +14,31 @@ export default function LoginForm({ onLogin }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="card">
+      <p className="brand">ProntoPaga</p>
+      <h2>Iniciar sesión</h2>
+      <p className="subtitle">Accede para consultar scores financieros</p>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Usuario</label>
+          <input
+            type="text"
+            placeholder="Ingresa tu usuario"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label>Contraseña</label>
+          <input
+            type="password"
+            placeholder="Ingresa tu contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
   );
 }
